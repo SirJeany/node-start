@@ -31,8 +31,4 @@ router.get('/:pokeId', function(req, res, next) {
 
 });
 
-// Update:
-// router.patch()
-// Delete:
-
 module.exports = router;

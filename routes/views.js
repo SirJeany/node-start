@@ -15,10 +15,15 @@ router.get('/:pokeId', function(req, res, next) {
             console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
             console.log('body:', body); // Print the HTML for the Google homepage.
             res.render('views', {poke: JSON.parse(body)} );
-        }
-    );
+        });
 
+    request(
+        'http://localhost:8000/pokemon/' + req.params.pokeId,
+        "DELETE",
+    )
 });
+
+
 
 //// HANDLING UPDATE INSIDE THE VIEW:
 // router.post('/:pokeId', function(req, res, next){

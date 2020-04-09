@@ -7,7 +7,7 @@ router.get('/:id', function(req, res, next){
         'http://localhost:8000/pokemon/' + req.body.pokeId,
         function(error, response, body){
             console.log("Body: ", body);
-            
+            res.render('delete', {message: false, poke: JSON.parse(body)});
         }
     );
 });

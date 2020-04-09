@@ -17,14 +17,22 @@ router.get("/:pokeId", function(req, res, next){
     );
     
     router.post('/:pokeId', function(req, res, next) {
-        request.patch({
+        request({
             url: 'http://localhost:8000/pokemon/' + req.params.pokeId,
+            method: "PATCH",
             form: {
                 name: req.body.updateName,
                 image: req.body.updateImage
             }
-        });
+        },
+        function(error, response, body) {
+            console.log("The new body:");
+            console.log(body);
+            // res.render.apply('patch', {message: "Updated Successfully"});
+        }
+        );
     });
+    res.redirect('/views/' + req.params.pokeId);
 
     // request(
     //     'http://localhost:8000/pokemon/' + req.params.pokeId, 
@@ -38,9 +46,5 @@ router.get("/:pokeId", function(req, res, next){
     // );
     
 });
-
-// router.patch("/:pokeId", function(req, res, next){
-//     res.send("Got a patch request from the user")
-// });
 
 module.exports = router;

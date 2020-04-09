@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>POKE App | UPDATE</title>
+    <title>Hero App | New</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
@@ -35,18 +35,11 @@
                     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
                         <img src="<%= poke.image %>">
                     </div>
-                    <div class="col-xs-12 col-sm-4 col-sm-offset-4 text-center">
-                        <br>
-                        <form method="post">
-                            <input class="text-center mb-2  " type="text" name="updateName" id="updateName" placeholder="Insert new name">
-                            <input class="text-center" disabled="true" type="text" name="updateImage" id="updateImage" placeholder="New image URL">
-                            
-                            <br>
-                            <button type="submit" class="btn btn-block btn-primary">Update</button>
-                        </form>
-                        <br>
-                        <a href="/views/<%= poke.id %>" class="btn btn-block btn-outline-primary">Back</a>
-                    </div>
+                    <form method="post">
+                        <div class="form-group">
+                            <label for="btnDelete">Are you sure you want to delete poor <%= poke.name %>?</label>
+                        </div>
+                    </form>
                 </div>
 
             </div>

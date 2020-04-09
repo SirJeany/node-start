@@ -42,23 +42,18 @@
                         </a>
 
                         <% pokemon.pokemon.forEach(function(poke){ %>
-                            <a href="/views/<%-poke.id %>">
                                 <div class="col-xs-6 col-md-2">
                                     <div class="panel panel-default">
-                                        <div class="panel-body">
-                                            <img src="<%-poke.image %>">
-                                        </div>
-                                        <div class="panel-footer">
-                                            <%- poke.name %>
-                                        </div>
-                                        <div class="panel-footer">
-                                            <button class="btn btn-danger" >
-                                                Remove
-                                            </button>
-                                        </div>
+                                        <a href="/views/<%-poke.id %>">
+                                            <div class="panel-body">
+                                                <img src="<%-poke.image %>">
+                                            </div>
+                                            <div class="panel-footer">
+                                                <%- poke.name %>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
-                            </a>
                         <% }); %>
 
             </div>

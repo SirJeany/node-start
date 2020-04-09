@@ -37,15 +37,11 @@
                     </div>
                     <div class="col-xs-12 col-sm-4 col-sm-offset-4 text-center">
                         <br>
-                        <form action="" method="post">
-                            <input class="text-center mb-2  " type="text" name="updateName" id="updateName" placeholder="Insert new name">
-                            <input class="text-center" type="text" name="updateImage" id="updateImage" placeholder="New image URL">
-                            
-                            <br>
-                            <a href="/views/<%= poke.id %>" class="btn btn-block btn-primary">Update</a>
-                            <br>
-                            <a href="/delete/<%= poke.id %>" class="btn btn-block btn-danger">Delete</a>
-                        </form>
+                        <a href="/update/<%= poke.id %>" class="btn btn-block btn-primary">Update</a>
+                        <br>
+                        <a href="/delete/<%= poke.id %>" class="btn btn-block btn-danger">Delete</a>
+                        <br>
+                        <a href="/" class="btn btn-block btn-outline-primary">Home</a>
                     </div>
                 </div>
 

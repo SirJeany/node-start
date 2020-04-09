@@ -33,6 +33,7 @@ var jsonParser = bodyParser.json();
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/views', viewsRouter);
+app.use('/delete', viewsRouter);
 app.use('/create', createRouter);
 app.use('/update', updateRouter);
 

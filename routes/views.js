@@ -22,6 +22,7 @@ router.get('/:pokeId', function(req, res, next) {
                     message: "Deleted " + JSON.stringify(body)
                 }
                 res.render('index', data );
+                // res.end('Deleted' + JSON.stringify(body, null, 2) );
         });
     } else { // We simply get:
         request(

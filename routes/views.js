@@ -8,7 +8,7 @@ var request = require('request');
 router.get('/:pokeId', function(req, res, next) {
     //make GET request to database
     request(
-        'http://localhost:8000/pokemon/' + req.params.pokeId, 
+        'http://localhost:8000/pokemon/' + req.params.pokeId,
         "GET",
         function (error, response, body) {
             console.error('error:', error); // Print the error if one occurred

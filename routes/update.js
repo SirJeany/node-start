@@ -16,24 +16,7 @@ router.get("/:pokeId", function(req, res, next){
         }
     );
     
-    router.post('/:pokeId', function(req, res, next) {
-        request({
-            url: 'http://localhost:8000/pokemon/' + req.params.pokeId,
-            method: "PATCH",
-            form: {
-                name: req.body.updateName,
-                image: req.body.updateImage
-            }
-        },
-        function(error, response, body) {
-            console.log("The new body:");
-            console.log(body);
-            // res.render.apply('patch', {message: "Updated Successfully"});
-        }
-        );
-    });
-    res.redirect('/views/' + req.params.pokeId);
-
+    
     // request(
     //     'http://localhost:8000/pokemon/' + req.params.pokeId, 
     //     "PATCH",
@@ -46,5 +29,26 @@ router.get("/:pokeId", function(req, res, next){
     // );
     
 });
+
+router.post('/:pokeId', function(req, res, next) {
+    request({
+        url: 'http://localhost:8000/pokemon/' + req.params.pokeId,
+        method: "PATCH",
+        form: {
+            id: req.params.pokeId,
+            name: req.body.updateName,
+            image: req.body.updateImage
+        }
+    },
+    function(error, response, body) {
+        console.log("The new body:");
+        console.log(body);
+        // res.render.apply('patch', {message: "Updated Successfully"});
+    }
+    );
+
+    res.redirect('/views/' + req.params.pokeId);
+});
+
 
 module.exports = router;

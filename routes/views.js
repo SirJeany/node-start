@@ -18,17 +18,22 @@ router.get('/:pokeId', function(req, res, next) {
         }
     );
 
-    // request({
-    //     url: "http://localhost:8000/pokemon" + req.params.pokeId,
-    //     method: "GET",
-    //     function(error, response, body){
-    //         console.log("Body: ");
-    //         console.log(body);
+});
 
-    //         res.render('views', {poke: JSON.parse(body)});
-    //     }
-    // })
-
+router.post('/:pokeId', function(req, res, next){
+    console.log('HELLO IM POSTING')
+    request({
+        url: 'http://localhost:8000/pokemon/' + req.params.pokeId,
+        method: "POST",
+        form: {
+            name: req.body.updateName
+        }
+    },
+    function(error, response, body){
+        console.log('body:', body); // Print the HTML for the Google homepage.
+        // res.render('views', {poke: JSON.parse(body)} );
+        res.render('update', {poke: JSON.parse(body)})
+    });
 });
 
 module.exports = router;

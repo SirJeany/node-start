@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var Pokemon = require('../db.json');
 var request = require('request');
-var bodyParser = require('body-parser');
 
 // GET create page:
 router.get('/', function(req, res, next) {

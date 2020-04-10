@@ -9,7 +9,7 @@ var app = express();
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var viewsRouter = require('./routes/views');
+
 var createRouter = require('./routes/create');
 var updateRouter = require('./routes/update');
 var deleteRouter = require('./routes/delete'); //
@@ -33,7 +33,7 @@ var jsonParser = bodyParser.json();
 //  Register routes after middleware:
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/views', viewsRouter);
+
 app.use('/create', createRouter);
 app.use('/update', updateRouter);
 app.use('/delete', deleteRouter);

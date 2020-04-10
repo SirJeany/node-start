@@ -8,8 +8,6 @@ var request = require('request');
 router.get('/:pokeId', function(req, res, next) {
     //make GET request to database
         console.log("VIEWS!")
-        console.log('Body with Json parse: ', JSON.parse(body));
-        console.log('Body without Json parse: ', body);
 
         request(
             'http://localhost:8000/pokemon' + req.params.pokeId,

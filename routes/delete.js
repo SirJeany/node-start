@@ -9,10 +9,10 @@ router.get('/:pokeId', function(req, res, next){
     // NATE:
     var id = 0;
     var Pokes = Pokemon.pokemon;
-    console.log(req.params.pokeId);
+    // console.log(req.params.pokeId);
     // loop to find index
     for(var i = 0; i < Pokes.length; i++){
-      if (Pokes[i].id == req.params.pokeId){
+      if (Pokes[i].id == req.params.id){
         id = i;
       }
     }

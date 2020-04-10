@@ -15,7 +15,7 @@ Nate's introduction to Node
 Browser: localhost::3000
 
 # Notes/Issues:
-* Add a pokemon: Will need to refresh the homepage after adding it
+* Add a pokemon: Will need to refresh the homepage after adding it (delete as well).
 * Deleting a pokemon:
     * We remove the pokemon from the Pokemon database, but we fail to update the rest of the pokemon id's. This will become a problem when we try add another pokemon: The amount of objects in Pokemon and 'id' wont match up.
     * What we would like to see is that if we delete evie (number 9), then number 10 should become the new number 9, and so on. 

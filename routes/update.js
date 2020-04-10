@@ -30,7 +30,7 @@ router.post('/:pokeId', function(req, res, next) {
     }
     );
 
-    res.redirect('/views/' + req.params.pokeId);
+    res.redirect('/views/' + req.params.pokeId, {});
 });
 
 

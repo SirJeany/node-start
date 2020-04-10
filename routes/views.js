@@ -9,22 +9,22 @@ router.get('/:pokeId', function(req, res, next) {
     //make GET request to database
 
     // IF: We are navigating to delete:
-    if(req._parsedOriginalUrl.pathname.includes('delete')){
-        console.log("Deleting!")
-        request(
-            'http://localhost:8000/pokemon/' + req.params.pokeId,
-            "DELETE",
-            function (error, response, body) {
-                console.log('body:', JSON.stringify(body.name)); // Print the HTML for the Google homepage.
-                let data = {
-                    title: 'It\'s Pokemon time!',
-                    pokemon: Pokemon,
-                    message: "Deleted " + JSON.stringify(body)
-                }
-                res.render('index', data );
-                // res.end('Deleted' + JSON.stringify(body, null, 2) );
-        });
-    } else { // We simply get:
+    // if(req._parsedOriginalUrl.pathname.includes('delete')){
+        console.log("VIEWS!")
+        // request(
+        //     'http://localhost:8000/pokemon/' + req.params.pokeId,
+        //     "DELETE",
+        //     function (error, response, body) {
+        //         console.log('body:', JSON.stringify(body.name)); // Print the HTML for the Google homepage.
+        //         let data = {
+        //             title: 'It\'s Pokemon time!',
+        //             pokemon: Pokemon,
+        //             message: "Deleted " + JSON.stringify(body)
+        //         }
+        //         res.render('index', data );
+        //         // res.end('Deleted' + JSON.stringify(body, null, 2) );
+        // });
+    // } else { // We simply get:
         request(
             'http://localhost:8000/pokemon/' + req.params.pokeId,
             "GET",
@@ -34,7 +34,7 @@ router.get('/:pokeId', function(req, res, next) {
                 console.log('body:', body); // Print the HTML for the Google homepage.
                 res.render('views', {poke: JSON.parse(body)} );
         });
-    }
+    // }
 });
 
 

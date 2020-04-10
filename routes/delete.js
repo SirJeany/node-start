@@ -12,7 +12,7 @@ router.get('/:pokeId', function(req, res, next){
     // console.log(req.params.pokeId);
     // loop to find index
     for(var i = 0; i < Pokes.length; i++){
-      if (Pokes[i].id == req.params.id){
+      if (Pokes[i].id == req.params.pokeId){
         id = i;
       }
     }

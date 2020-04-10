@@ -9,18 +9,19 @@ router.get('/:pokeId', function(req, res, next){
     // NATE:
     var id = 0;
     var Pokes = Pokemon.pokemon;
+    console.log(req.params.pokeId);
     // loop to find index
     for(var i = 0; i < Pokes.length; i++){
-      if (Pokes[i].id == req.params.id){
+      if (Pokes[i].id == req.params.pokeId){
         id = i;
       }
     }
 
-    console.log(id);
+    
 
     res.render('delete',{
       title : "Delete",
-      poke : Pokemon.pokemon[id],
+      poke : Pokemon.pokemon,
       id : id,
     });
 

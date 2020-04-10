@@ -8,7 +8,6 @@ var bodyParser = require('body-parser');
 var app = express();
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 
 var createRouter = require('./routes/create');
 var updateRouter = require('./routes/update');
@@ -32,7 +31,6 @@ var jsonParser = bodyParser.json();
 
 //  Register routes after middleware:
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
 app.use('/create', createRouter);
 app.use('/update', updateRouter);

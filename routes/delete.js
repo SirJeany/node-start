@@ -7,12 +7,12 @@ const request = require('request'); // Request to handle requests
 router.get('/:pokeId', function(req, res, next){
 
     // NATE:
-    var id = 0;
+    var id;
     var Pokes = Pokemon.pokemon;
-    console.log(req.params.pokeId);
+    // console.log(req.params.pokeId);
     // loop to find index
     for(var i = 0; i < Pokes.length; i++){
-      if (Pokes[i].id == req.params.pokeId){
+      if (Pokes[i].id == req.params.id){
         id = i;
       }
     }
@@ -24,24 +24,6 @@ router.get('/:pokeId', function(req, res, next){
       poke : Pokemon.pokemon,
       id : id,
     });
-
-    // Find id in the db:
-    // var pokes = Pokemon.pokemon;
-    // var id = Number(pokes.length);
-
-    // var pokesId = pokes[1].id;
-
-    // for(var i = 0; i <= pokes.length; i++){
-    //     if(pokesId == id){
-    //         id = i;
-    //     }
-    // }
-    // console.log(id)
-    // res.render('delete', {
-    //     title: "Delete",
-    //     poke: Pokemon.pokemon[req.params.pokeId],
-    //     id: id
-    // });
 });
 
 router.post('/:pokeId', function(req, res, next){

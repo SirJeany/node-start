@@ -5,7 +5,7 @@ const request = require('request'); // Request to handle requests
 
 // Register the router with the app:
 router.get('/:pokeId', function(req, res, next){
-  console.log("GET DELETE");
+  console.log("GET DELETE!!");
     // NATE:
     var deletedIndex = 0; // The index which the poke is to be deleted at
     var Pokes = Pokemon.pokemon;
@@ -35,9 +35,13 @@ router.post('/:pokeId', function(req, res, next){
         method: 'DELETE'        
     },
     function(error, response, body){
-        res.render('index', {message: "Deleted"});
+        res.render('index', {
+          title: "It\'s Pokemon time!",
+          pokemon: Pokemon,
+          message: "Deleted"
+        });
     });
-    res.redirect('/');
+    // res.redirect('/');
 });
 
 module.exports = router; // To make this router availble to our app when importing it

@@ -18,5 +18,5 @@
     "nodemon": "^2.0.2",
     "request": "^2.88.2"
   },
-  "main": "app.js"
+  "main": "node ./bin/www"
 }
